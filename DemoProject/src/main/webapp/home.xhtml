@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<title>NIC Demo</title>
+</head>
+
+<h:body>
+	<ui:composition template="templates/common.xhtml">
+		<ui:define name="content">
+
+			<h:form>
+				<h3>Using Managed Bean</h3>
+				<h:commandButton action="#{navigationController.moveToPage1}"
+					value="UI" />
+				<h3>Using JSF outcome</h3>
+				<h:commandButton action="page2" value="Posgre" />
+			</h:form>
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
