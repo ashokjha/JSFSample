@@ -6,7 +6,7 @@ package poc.web.jsf.prj.util;
 import java.util.Properties;
 
 /**
- * @author USER
+ * @author  Ashok Kumar Jha 
  *
  */
 public class PropertyReader {
