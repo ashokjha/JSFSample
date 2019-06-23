@@ -40,10 +40,10 @@ public class NicItPocData implements Serializable {
         try {
             Connection con = DbDataSource.getConnection();
             pst = con.prepareStatement(stm);
-            logger.debug("SQL executed "+ stm +"  Debug level");
+           // logger.debug("SQL executed "+ stm +"  Debug level");
             logger.trace("SQL executed "+ stm+"  trace level");
-            logger.warn("SQL executed "+ stm+"  warn level");
-            logger.error("SQL executed "+ stm+"  error level");
+           // logger.warn("SQL executed "+ stm+"  warn level");
+           // logger.error("SQL executed "+ stm+"  error level");
 
             pst.execute();
             rs = pst.getResultSet();

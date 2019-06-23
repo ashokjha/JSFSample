@@ -1,0 +1,88 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:cmp="http://java.sun.com/jsf/composite/compo">
+
+<h:body>
+	<ui:composition template="templates/common.xhtml">
+		<ui:define name="content">
+			<h1>Add a Sample Data</h1>
+			<h:form>
+				<table>
+					<tr>
+						<td><label>ID</label></td>
+						<td><h:inputText id="id" value="#{sampleData.id}"></h:inputText>
+						</td>
+					</tr>
+					<tr>
+						<td><label>Name</label></td>
+						<td><h:inputText id="name" value="#{sampleData.name}"></h:inputText>
+						</td>
+					</tr>
+					<tr>
+						<td><label>SurName</label></td>
+						<td><h:inputText id="surnamde" value="#{sampleData.surname}"></h:inputText>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2"><h:commandButton
+								action="#{sampleDataService.addSampleData(sampleData)}"
+								value="Add Sample Data"></h:commandButton></td>
+					</tr>
+
+				</table>
+
+			</h:form>
+
+			<br />
+			<h3>Sample Data List</h3>
+			<c:if test="${!empty sampleDataService.getSampleDatas()}">
+<!-- 				<table class="tg"> -->
+<!-- 					<tr> -->
+<!-- 						<th width="80">ID</th> -->
+<!-- 						<th width="120">Name</th> -->
+<!-- 						<th width="120">Surname</th> -->
+<!-- 					</tr> -->
+<!-- 					<ui:repeat value="${sampleDataService.getSampleDatas()}" -->
+<!-- 						var="smpledata"> -->
+<!-- 						<tr> -->
+<!-- 							<td>${smpledata.id}</td> -->
+<!-- 							<td>${smpledata.name}</td> -->
+<!-- 							<td>${smpledata.surname}</td> -->
+<!-- 						</tr> -->
+<!-- 					</ui:repeat> -->
+<!-- 				</table> -->
+				
+			<h:dataTable value="#{sampleDataService.getSampleDatas()}" var="c"
+				styleClass="nicItPocTable" headerClass="nicItTableHeader"
+				rowClasses="nicItTableOddRow,nicItTableEvenRow">
+
+				<h:column>
+					<f:facet name="header">ID</f:facet>
+        		    #{c.id}
+		        </h:column>
+
+				<h:column>
+					<f:facet name="header">Name</f:facet>
+		            #{c.name}
+		         </h:column>
+				<h:column>
+					<f:facet name="header">SurName</f:facet>
+		            #{c.surname}
+		         </h:column>		         
+			</h:dataTable>				
+				
+				
+			</c:if>
+			<br />
+			<h:link value="Back To Home" outcome="home" />
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
