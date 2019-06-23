@@ -81,7 +81,7 @@ public class SampleDataServiceImpl implements ISampleDataService {
 
     @Override
     public List<UserManagedBean> getSampleDatas() {
-        System.out.println("this.sampleDataDao =" + this.sampleDataDao);
+      //  System.out.println("this.sampleDataDao =" + this.sampleDataDao);
         List<UserManagedBean> userList = new ArrayList<UserManagedBean>();
         this.sampleDataDao.getSampleDatas().forEach(sd -> {
             UserManagedBean ub = new UserManagedBean();

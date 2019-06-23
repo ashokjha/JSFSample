@@ -26,7 +26,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><label>SurName</label></td>
+						<td><label>Surname</label></td>
 						<td><h:inputText id="surnamde" value="#{sampleData.surname}"></h:inputText>
 						</td>
 					</tr>
@@ -43,22 +43,6 @@
 			<br />
 			<h3>Sample Data List</h3>
 			<c:if test="${!empty sampleDataService.getSampleDatas()}">
-<!-- 				<table class="tg"> -->
-<!-- 					<tr> -->
-<!-- 						<th width="80">ID</th> -->
-<!-- 						<th width="120">Name</th> -->
-<!-- 						<th width="120">Surname</th> -->
-<!-- 					</tr> -->
-<!-- 					<ui:repeat value="${sampleDataService.getSampleDatas()}" -->
-<!-- 						var="smpledata"> -->
-<!-- 						<tr> -->
-<!-- 							<td>${smpledata.id}</td> -->
-<!-- 							<td>${smpledata.name}</td> -->
-<!-- 							<td>${smpledata.surname}</td> -->
-<!-- 						</tr> -->
-<!-- 					</ui:repeat> -->
-<!-- 				</table> -->
-				
 			<h:dataTable value="#{sampleDataService.getSampleDatas()}" var="c"
 				styleClass="nicItPocTable" headerClass="nicItTableHeader"
 				rowClasses="nicItTableOddRow,nicItTableEvenRow">
@@ -73,7 +57,7 @@
 		            #{c.name}
 		         </h:column>
 				<h:column>
-					<f:facet name="header">SurName</f:facet>
+					<f:facet name="header">Surname</f:facet>
 		            #{c.surname}
 		         </h:column>		         
 			</h:dataTable>				
