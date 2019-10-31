@@ -26,7 +26,7 @@
 		<commons-dbcp2.version>2.6.0</commons-dbcp2.version>
 		<slf4j.version>1.6.4</slf4j.version>
 		<logback.version>1.2.3</logback.version>
-		<spring.version>4.3.12.RELEASE</spring.version>
+		<spring.version>5.2.0.RELEASE</spring.version>
 		<javax.el.version>3.0.1-b04</javax.el.version>
 
 	</properties>
